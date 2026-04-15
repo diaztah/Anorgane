@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANORGANE — Care Instructions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:   #050303;
+  --pale: #ede8e0;
+  --ash:  #6b6460;
+  --blood:#7a0d18;
+  --raw:  #9e1422;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--pale);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 60px 28px 100px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* logo */
+.top {
+  display: flex; align-items: center; gap: 4px;
+  margin-bottom: 56px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(122,13,24,0.15);
+}
+.top svg { width: 11px; height: 16px; }
+.top span {
+  font-family:'Poppins',sans-serif; font-weight:300;
+  font-size: 14px; letter-spacing: 0.13em;
+  color: rgba(237,232,224,0.8);
+}
+.top-sub {
+  margin-left: auto;
+  font-style: italic; font-size: 10px; letter-spacing: 0.35em;
+  color: rgba(122,13,24,0.5);
+}
+
+/* title */
+.page-title {
+  font-family:'Poppins',sans-serif; font-weight:100;
+  font-size: 11px; letter-spacing: 0.6em;
+  color: rgba(122,13,24,0.55); text-transform: uppercase;
+  margin-bottom: 52px;
+  display: flex; align-items: center; gap: 14px;
+}
+.page-title::after {
+  content:''; flex:1; height:1px;
+  background: linear-gradient(90deg, rgba(122,13,24,0.2), transparent);
+}
+
+/* section */
+.care-sec { margin-bottom: 48px; }
+
+.sec-head {
+  font-family:'Poppins',sans-serif; font-weight:200;
+  font-size: 9px; letter-spacing: 0.55em;
+  color: rgba(122,13,24,0.5); text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(122,13,24,0.1);
+}
+
+.care-item {
+  display: flex; gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(122,13,24,0.07);
+}
+.care-item:last-child { border-bottom: none; }
+
+.bullet {
+  width: 4px; height: 4px;
+  background: rgba(122,13,24,0.45);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+
+.care-text {}
+.cj {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.9; letter-spacing: 0.04em;
+  color: rgba(237,232,224,0.82);
+  margin-bottom: 5px;
+}
+.ce {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size: clamp(12px, 1.6vw, 14px);
+  line-height: 1.85; letter-spacing: 0.09em;
+  color: rgba(237,232,224,0.22);
+}
+
+/* para (非リスト) */
+.care-para {
+  padding: 0;
+}
+.care-para .cj {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 2; letter-spacing: 0.04em;
+  color: rgba(237,232,224,0.78);
+  margin-bottom: 8px;
+}
+.care-para .ce {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size: clamp(12px, 1.6vw, 14px);
+  line-height: 1.9; letter-spacing: 0.09em;
+  color: rgba(237,232,224,0.2);
+}
+
+/* divider */
+.div {
+  width:100%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(122,13,24,0.15),transparent);
+  margin: 48px 0;
+}
+
+/* footer */
+.foot {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(122,13,24,0.1);
+  display: flex; justify-content:space-between; align-items:center;
+}
+.foot-logo { display:flex; align-items:center; gap:3px; }
+.foot-logo svg { width:8px; height:12px; }
+.foot-logo span {
+  font-family:'Poppins',sans-serif; font-weight:300;
+  font-size:10px; letter-spacing:0.13em; color:rgba(237,232,224,0.15);
+}
+.foot-copy {
+  font-style:italic; font-size:9px; letter-spacing:0.2em;
+  color:rgba(237,232,224,0.1);
+}
+</style>
+</head>
+<body>
+
+<!-- TOP -->
+<div class="top">
+  <svg viewBox="0 0 50 72" fill="none">
+    <line x1="2" y1="2" x2="25" y2="70" stroke="rgba(158,20,34,0.82)" stroke-width="5" stroke-linecap="square"/>
+    <line x1="48" y1="2" x2="25" y2="70" stroke="rgba(158,20,34,0.82)" stroke-width="5" stroke-linecap="square"/>
+    <line x1="13" y1="27" x2="37" y2="27" stroke="rgba(158,20,34,0.82)" stroke-width="5" stroke-linecap="square"/>
+  </svg>
+  <span>NORGANE</span>
+  <div class="top-sub">Please read before purchasing</div>
+</div>
+
+<div class="page-title">注意事項 / Care Instructions</div>
+
+<!-- 素材 -->
+<div class="care-sec">
+  <div class="sec-head">素材について / Material</div>
+  <div class="care-para">
+    <p class="cj">本作品はPVCを主素材としています。素材の性質上、経年により色味や質感が変化する場合があります。</p>
+    <p class="ce">This work is primarily made of PVC. Due to the nature of the material, color and texture may change over time.</p>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- 着用 -->
+<div class="care-sec">
+  <div class="sec-head">着用について / Wearing</div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">水・汗・香水・化粧品への長時間の接触は避けてください。</p>
+      <p class="ce">Avoid prolonged contact with water, sweat, perfume, or cosmetics.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">就寝時・運動時の着用はお控えください。</p>
+      <p class="ce">Do not wear while sleeping or exercising.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">強い力での引っ張りはお避けください。</p>
+      <p class="ce">Avoid pulling with excessive force.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">金属部分（チェーン等）により、まれに金属アレルギーが生じる場合があります。肌に異常を感じた場合はすぐに外してください。</p>
+      <p class="ce">Metal parts (chains, etc.) may cause allergic reactions in rare cases. Remove immediately if any skin irritation occurs.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">不注意等による風合い・色合いの変化につきましては、一切の責任を負いかねます。</p>
+      <p class="ce">We are not responsible for any changes in texture or color caused by improper handling.</p>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- 保管 -->
+<div class="care-sec">
+  <div class="sec-head">保管について / Storage</div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">直射日光・高温多湿の場所を避けて保管してください。</p>
+      <p class="ce">Store away from direct sunlight, high temperatures, and humidity.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">他のアクセサリーと重ねて保管すると傷の原因となります。</p>
+      <p class="ce">Storing with other accessories may cause scratches.</p>
+    </div>
+  </div>
+
+  <div class="care-item">
+    <div class="bullet"></div>
+    <div class="care-text">
+      <p class="cj">個別の袋や箱に入れての保管を推奨します。</p>
+      <p class="ce">We recommend storing each piece individually in a bag or box.</p>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- 修理・返品 -->
+<div class="care-sec">
+  <div class="sec-head">修理・返品について / Repairs & Returns</div>
+  <div class="care-para">
+    <p class="cj">各作品は一点物のため、同一品との交換はできません。お客様のご都合による返品・交換は一切お断りさせていただいております。配送中の損失や破損についても責任を負いかねます。あらかじめご了承ください。</p>
+    <p class="ce">As each piece is one-of-a-kind, replacement with an identical item is not possible. We do not accept returns or exchanges for personal reasons. We are also unable to take responsibility for any loss or damage during shipping.</p>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- キャンセル -->
+<div class="care-sec">
+  <div class="sec-head">キャンセルについて / Cancellations</div>
+  <div class="care-para">
+    <p class="cj">決済後のキャンセルは如何なる理由においてもお受け出来ませんのでご了承ください。銀行振込・コンビニ決済のお客様は、確認メールに記載の振込期日を必ずお守りください。度重なるキャンセルが続いた場合、取引停止となる場合がございます。</p>
+    <p class="ce">Cancellations cannot be accepted for any reason after payment. Customers paying by bank transfer or convenience store must adhere to the deadline in the confirmation email. Repeated cancellations may result in suspension of future transactions.</p>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- 発送 -->
+<div class="care-sec">
+  <div class="sec-head">発送・包装について / Packaging</div>
+  <div class="care-para">
+    <p class="cj">できる限りコンパクトに梱包しております。</p>
+    <p class="ce">Items are packaged as compactly as possible.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+  <div class="foot-logo">
+    <svg viewBox="0 0 50 72" fill="none">
+      <line x1="2" y1="2" x2="25" y2="70" stroke="rgba(122,13,24,0.35)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="48" y1="2" x2="25" y2="70" stroke="rgba(122,13,24,0.35)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="13" y1="27" x2="37" y2="27" stroke="rgba(122,13,24,0.35)" stroke-width="5" stroke-linecap="square"/>
+    </svg>
+    <span>NORGANE</span>
+  </div>
+  <div class="foot-copy">© MMXXVI — All works original</div>
+</div>
+
+</body>
+</html>
 
