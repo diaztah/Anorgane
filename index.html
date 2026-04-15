@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANORGANE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:    #050303;
+  --pale:  #ede8e0;
+  --mid:   #7a7470;
+  --dim:   #3a3430;
+  --blood: #7a0d18;
+  --raw:   #9e1422;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--pale);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* GRAIN */
+body::before {
+content:’’; position:fixed; inset:0; pointer-events:none; z-index:800;
+background:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.82’ numOctaves=‘4’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”);
+opacity:0.038;
+}
+
+/* ═══ NAV ═══ */
+nav {
+position:fixed; top:0; left:0; right:0; z-index:600;
+padding:22px 36px;
+display:flex; justify-content:space-between; align-items:center;
+background:rgba(5,3,3,0.94);
+border-bottom:1px solid rgba(122,13,24,0.14);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+.logo {
+display:flex; align-items:center; gap:3px; text-decoration:none;
+}
+.logo svg { width:12px; height:17px; }
+.logo-text {
+font-family:‘Poppins’,sans-serif; font-weight:300;
+font-size:15px; letter-spacing:0.13em;
+color:rgba(237,232,224,0.88);
+}
+.nav-tag {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:11px; letter-spacing:0.35em; color:rgba(122,13,24,0.5);
+}
+
+/* ═══ HERO ═══ */
+#hero {
+min-height:100vh;
+padding:138px 36px 88px;
+display:flex; flex-direction:column; justify-content:center;
+position:relative; overflow:hidden;
+}
+.hero-glow {
+position:absolute; inset:0; pointer-events:none;
+background:
+radial-gradient(ellipse 55% 45% at 75% 45%, rgba(122,13,24,0.09) 0%, transparent 65%),
+radial-gradient(ellipse 30% 40% at 10% 80%, rgba(122,13,24,0.04) 0%, transparent 60%);
+}
+.hero-kicker {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:11px; letter-spacing:0.55em; color:rgba(122,13,24,0.55);
+margin-bottom:40px;
+animation: up 1s ease 0.15s both;
+}
+.hero-title {
+font-family:‘Poppins’,sans-serif; font-weight:100;
+font-size:clamp(38px, 10vw, 76px);
+line-height:1.18; letter-spacing:0.04em;
+color:rgba(237,232,224,0.95);
+margin-bottom:8px;
+animation: up 1.2s cubic-bezier(0.16,1,0.3,1) 0.3s both;
+}
+.hero-title .r { color:rgba(158,20,34,0.92); }
+.hero-title-en {
+font-family:‘Cormorant Garamond’,serif; font-style:italic; font-weight:300;
+font-size:clamp(14px, 2.8vw, 20px);
+letter-spacing:0.2em; color:rgba(237,232,224,0.22);
+margin-bottom:52px;
+animation: up 1.2s cubic-bezier(0.16,1,0.3,1) 0.46s both;
+}
+.hero-sep {
+width:56px; height:1px;
+background:linear-gradient(90deg, rgba(122,13,24,0.75), transparent);
+margin-bottom:36px;
+animation: up 1s ease 0.6s both;
+}
+.hero-body {
+max-width:500px;
+animation: up 1s ease 0.75s both;
+}
+.hero-body-jp {
+font-size:clamp(15px, 2.2vw, 18px); line-height:2.2;
+letter-spacing:0.05em; color:rgba(122,118,112,0.9);
+margin-bottom:10px;
+}
+.hero-body-en {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:clamp(13px, 1.8vw, 15px); line-height:2;
+letter-spacing:0.1em; color:rgba(237,232,224,0.18);
+}
+.hero-foot {
+margin-top:64px; display:flex; align-items:center; gap:14px;
+animation: fadeIn 1s ease 1.3s both;
+}
+.hero-foot-line {
+width:44px; height:1px;
+background:linear-gradient(90deg, rgba(122,13,24,0.65), transparent);
+}
+.hero-foot-txt {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:9px; letter-spacing:0.5em; color:rgba(122,13,24,0.35);
+}
+
+@keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* ═══ DIVIDER ═══ */
+.div {
+width:100%; height:1px;
+background:linear-gradient(90deg, transparent 5%, rgba(122,13,24,0.18) 35%, rgba(122,13,24,0.18) 65%, transparent 95%);
+}
+
+/* ═══ SECTION ═══ */
+.sec {
+padding:108px 36px;
+max-width:700px; margin:0 auto;
+}
+.sec-label {
+font-family:‘Poppins’,sans-serif; font-weight:200;
+font-size:8px; letter-spacing:0.7em; color:rgba(122,13,24,0.55);
+text-transform:uppercase; margin-bottom:52px;
+display:flex; align-items:center; gap:14px;
+}
+.sec-label::after {
+content:’’; flex:1; height:1px;
+background:linear-gradient(90deg, rgba(122,13,24,0.2), transparent);
+}
+
+/* ═══ MANIFESTO ═══ */
+.mani-block { display:flex; flex-direction:column; gap:52px; }
+.mani-unit {}
+.mj {
+font-size:clamp(16px, 2.4vw, 20px); line-height:2.25;
+letter-spacing:0.05em; color:rgba(237,232,224,0.84);
+margin-bottom:16px;
+}
+.mj .k { color:rgba(158,20,34,0.88); }
+.me {
+font-family:‘Cormorant Garamond’,serif; font-style:italic; font-weight:300;
+font-size:clamp(13px, 1.8vw, 15px); line-height:2.1;
+letter-spacing:0.1em; color:rgba(237,232,224,0.2);
+padding-left:20px;
+border-left:1px solid rgba(122,13,24,0.18);
+}
+
+/* ═══ QUOTE ═══ */
+#quote {
+padding:108px 36px; text-align:center;
+border-top:1px solid rgba(122,13,24,0.1);
+border-bottom:1px solid rgba(122,13,24,0.1);
+position:relative; overflow:hidden;
+}
+#quote::before {
+content:’’; position:absolute; inset:0; pointer-events:none;
+background:radial-gradient(ellipse 70% 100% at 50% 50%, rgba(122,13,24,0.055) 0%, transparent 70%);
+}
+.q-glyph {
+font-size:64px; color:rgba(122,13,24,0.14);
+line-height:0.55; margin-bottom:32px;
+font-family:‘Cormorant Garamond’,serif;
+}
+.qj {
+font-size:clamp(19px, 3.2vw, 27px); line-height:1.95;
+letter-spacing:0.05em; color:rgba(237,232,224,0.9);
+margin-bottom:18px; position:relative; z-index:1;
+}
+.qe {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:clamp(13px, 1.8vw, 15px); line-height:2;
+letter-spacing:0.1em; color:rgba(237,232,224,0.2);
+margin-bottom:28px; position:relative; z-index:1;
+}
+.q-src {
+font-family:‘Poppins’,sans-serif; font-weight:200;
+font-size:8px; letter-spacing:0.55em;
+color:rgba(122,13,24,0.42); text-transform:uppercase;
+position:relative; z-index:1;
+}
+
+/* ═══ ABOUT ═══ */
+.about-grid {
+display:grid; grid-template-columns:1fr 1fr;
+gap:1px; background:rgba(122,13,24,0.14);
+}
+.a-cell { background:var(–bg); padding:36px 26px; }
+.a-lbl {
+font-family:‘Poppins’,sans-serif; font-weight:200;
+font-size:8px; letter-spacing:0.6em; color:rgba(122,13,24,0.48);
+text-transform:uppercase; margin-bottom:14px;
+}
+.aj {
+font-size:clamp(14px, 2vw, 16px); line-height:1.95;
+letter-spacing:0.04em; color:rgba(237,232,224,0.78);
+margin-bottom:7px;
+}
+.ae {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:clamp(12px, 1.6vw, 14px); line-height:1.85;
+letter-spacing:0.08em; color:rgba(237,232,224,0.2);
+}
+
+/* ═══ CONTACT ═══ */
+.c-intro { margin-bottom:44px; }
+.cj {
+font-size:clamp(15px, 2.2vw, 18px); line-height:2.2;
+letter-spacing:0.05em; color:rgba(122,118,112,0.85);
+margin-bottom:10px;
+}
+.ce {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:clamp(13px, 1.8vw, 15px); line-height:2;
+letter-spacing:0.1em; color:rgba(237,232,224,0.18);
+}
+.c-links { border-top:1px solid rgba(122,13,24,0.12); }
+.c-row {
+display:flex; align-items:center; gap:18px;
+padding:22px 0;
+border-bottom:1px solid rgba(122,13,24,0.1);
+text-decoration:none;
+}
+.c-row-lbl {
+font-family:‘Poppins’,sans-serif; font-weight:200;
+font-size:8px; letter-spacing:0.55em; color:rgba(122,13,24,0.48);
+text-transform:uppercase; width:72px; flex-shrink:0;
+}
+.c-row-val {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:clamp(14px, 2vw, 17px); letter-spacing:0.1em;
+color:rgba(237,232,224,0.42);
+transition:color 0.3s;
+}
+.c-row:hover .c-row-val { color:rgba(237,232,224,0.72); }
+
+/* ═══ FOOTER ═══ */
+footer {
+border-top:1px solid rgba(122,13,24,0.1);
+padding:28px 36px;
+display:flex; justify-content:space-between; align-items:center;
+}
+.ft-logo { display:flex; align-items:center; gap:3px; }
+.ft-logo svg { width:9px; height:13px; }
+.ft-logo span {
+font-family:‘Poppins’,sans-serif; font-weight:300;
+font-size:11px; letter-spacing:0.13em; color:rgba(237,232,224,0.15);
+}
+.ft-copy {
+font-family:‘Cormorant Garamond’,serif; font-style:italic;
+font-size:10px; letter-spacing:0.22em; color:rgba(237,232,224,0.1);
+}
+
+/* ═══ MOBILE ═══ */
+@media(max-width:520px){
+.about-grid { grid-template-columns:1fr; }
+}
+
+/* ═══ REVEAL ═══ */
+.rv { opacity:0; transform:translateY(20px); transition:opacity 0.88s cubic-bezier(0.16,1,0.3,1), transform 0.88s cubic-bezier(0.16,1,0.3,1); }
+.rv.on { opacity:1; transform:none; }
+.d1 { transition-delay:0.1s; }
+.d2 { transition-delay:0.22s; }
+.d3 { transition-delay:0.34s; }
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a class="logo" href="#">
+    <svg viewBox="0 0 50 72" fill="none">
+      <line x1="2" y1="2" x2="25" y2="70" stroke="rgba(158,20,34,0.86)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="48" y1="2" x2="25" y2="70" stroke="rgba(158,20,34,0.86)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="13" y1="27" x2="37" y2="27" stroke="rgba(158,20,34,0.86)" stroke-width="5" stroke-linecap="square"/>
+    </svg>
+    <span class="logo-text">NORGANE</span>
+  </a>
+  <div class="nav-tag">wearable sculpture</div>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-kicker">art object &mdash; tokyo &mdash; mmxxv</div>
+  <h1 class="hero-title">
+    形は<span class="r">嘘</span>だった<br>
+    溶け始めて<br>本物になった
+  </h1>
+  <p class="hero-title-en">The form was a lie. In dissolving, it became real.</p>
+  <div class="hero-sep"></div>
+  <div class="hero-body">
+    <p class="hero-body-jp">溶かしたマネキンから生まれる、器官なき身体へと向かうネックレス。アートとファッションの境界で生きる、唯一無二のウェアラブル彫刻。</p>
+    <p class="hero-body-en">Necklaces born from melted mannequins — a passage toward the body without organs. Wearable sculpture living on the boundary of art and fashion.</p>
+  </div>
+  <div class="hero-foot">
+    <div class="hero-foot-line"></div>
+    <span class="hero-foot-txt">scroll</span>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- MANIFESTO -->
+
+<section class="sec" id="manifesto">
+  <div class="sec-label rv">Manifesto</div>
+  <div class="mani-block">
+
+```
+<div class="mani-unit rv d1">
+  <p class="mj">マネキンは、身体ではなかった。それは身体という概念の<span class="k">模造品</span>だ。対称的で、空洞で、従順な表面。内部を持たない形。欲望を持たない輪郭。私たちはそれを自分自身の雛形として引き継ぎ、すでに死んでいるとも知らず、第二の皮膚として纏ってきた。</p>
+  <p class="me">The mannequin was never a body. It was the idea of a body — symmetrical, hollow, obedient. A surface without interior. A form without desire. We inherited it as a model for ourselves, wore it like a second skin, not knowing it was already dead.</p>
+</div>
+
+<div class="mani-unit rv d2">
+  <p class="mj">熱はこれを変える。持続的な温度のもとで、素材はその規定された形状を手放す。肩が内側へ崩れる。腰が捻れる。胸が、一度も設計されたことのない身振りで自らの上に折り畳まれる。これは<span class="k">破壊ではない</span>。この形が初めて行う、誠実な動きだ。</p>
+  <p class="me">Heat changes this. The material surrenders its prescribed geometry. The shoulders collapse inward. The waist twists. The chest folds in gestures it was never designed to make. This is not destruction — it is the first honest movement the form has ever made.</p>
+</div>
+
+<div class="mani-unit rv d3">
+  <p class="mj">溶解の途中で、私たちは介入する。変容の一瞬を永遠に固定し、<span class="k">喉元に吊るす</span>。あなたはその決断の記録を、肌に触れさせて纏う。ネックレスは身体を表現しない。それは身体そのものだ――最も誠実な状態において。</p>
+  <p class="me">At a precise moment, we intervene. The dissolution is arrested. Hung at the throat. You wear the record of that decision against your skin. The necklace does not represent the body — it is the body, in its most honest state.</p>
+</div>
+```
+
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- QUOTE -->
+
+<div id="quote">
+  <div class="q-glyph rv">"</div>
+  <p class="qj rv d1">器官なき身体とは、<br>組織化された機能の専制から解放された、<br>純粋な強度の表面である。</p>
+  <p class="qe rv d2">A body upon which what serves as organs<br>is distributed according to crowd phenomena,<br>freed from the tyranny of organized function.</p>
+  <div class="q-src rv d3">— Deleuze &amp; Guattari, Anti-Oedipus</div>
+</div>
+
+<div class="div"></div>
+
+<!-- ABOUT -->
+
+<section class="sec" id="about">
+  <div class="sec-label rv">About</div>
+  <div class="about-grid rv d1">
+    <div class="a-cell">
+      <div class="a-lbl">素材 / Material</div>
+      <p class="aj">PVC etc.</p>
+      <p class="ae">PVC etc.</p>
+    </div>
+    <div class="a-cell">
+      <div class="a-lbl">制作 / Process</div>
+      <p class="aj">加熱、溶解、固定。<br>各作品は一点物。</p>
+      <p class="ae">Heat, dissolution, arrest.<br>Each piece unique.</p>
+    </div>
+    <div class="a-cell">
+      <div class="a-lbl">拠点 / Base</div>
+      <p class="aj">東京、日本</p>
+      <p class="ae">Tokyo, Japan</p>
+    </div>
+    <div class="a-cell">
+      <div class="a-lbl">開始 / Since</div>
+      <p class="aj">MMXXV</p>
+      <p class="ae">2025</p>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CONTACT -->
+
+<section class="sec" id="contact">
+  <div class="sec-label rv">Contact</div>
+  <div class="c-intro rv d1">
+    <p class="cj">ご購入・コラボレーション・プレスのお問い合わせはこちら。<br>二つとして同じ溶解は存在しない。</p>
+    <p class="ce">For acquisition, collaboration and press enquiries.<br>No two dissolutions take the same path.</p>
+  </div>
+  <div class="c-links rv d2">
+    <a href="mailto:shindiazkaneko@gmail.com" class="c-row">
+      <span class="c-row-lbl">Email</span>
+      <span class="c-row-val">shindiazkaneko@gmail.com</span>
+    </a>
+    <a href="https://instagram.com/anorgane.jp" class="c-row">
+      <span class="c-row-lbl">Instagram</span>
+      <span class="c-row-val">@anorgane.jp</span>
+    </a>
+    <div class="c-row">
+      <span class="c-row-lbl">Base</span>
+      <span class="c-row-val">Tokyo, Japan</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="ft-logo">
+    <svg viewBox="0 0 50 72" fill="none">
+      <line x1="2" y1="2" x2="25" y2="70" stroke="rgba(122,13,24,0.38)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="48" y1="2" x2="25" y2="70" stroke="rgba(122,13,24,0.38)" stroke-width="5" stroke-linecap="square"/>
+      <line x1="13" y1="27" x2="37" y2="27" stroke="rgba(122,13,24,0.38)" stroke-width="5" stroke-linecap="square"/>
+    </svg>
+    <span>NORGANE</span>
+  </div>
+  <div class="ft-copy">© MMXXVI — All works original</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }});
+}, { threshold: 0.07 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
